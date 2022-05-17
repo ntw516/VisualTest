@@ -1,0 +1,67 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.example.visualtest"
+        minSdk 29
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        exclude 'META-INF/native-image/ios-x86_64/jnijavacpp/reflect-config.json'
+        exclude 'META-INF/native-image/linux-x86_64/jnijavacpp/jni-config.json'
+        exclude 'META-INF/native-image/windows-x86/jnijavacpp/reflect-config.json'
+        exclude 'META-INF/native-image/android-x86_64/jnijavacpp/jni-config.json'
+        exclude 'META-INF/native-image/android-x86/jnijavacpp/jni-config.json'
+        exclude 'META-INF/native-image/ios-arm64/jnijavacpp/jni-config.json'
+        exclude 'META-INF/native-image/windows-x86_64/jnijavacpp/reflect-config.json'
+        exclude 'META-INF/native-image/windows-x86_64/jnijavacpp/jni-config.json'
+        exclude 'META-INF/native-image/android-arm/jnijavacpp/reflect-config.json'
+        exclude 'META-INF/native-image/linux-ppc64le/jnijavacpp/jni-config.json'
+    }
+}
+
+ext {
+    versions = [
+            'javacv': '1.5.5',
+            'opencv': '4.5.1',
+            'artoolkitplus': '2.3.1',
+            'openpose': '1.7.0'
+    ]
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation(group: 'org.bytedeco', name: 'javacpp', version: versions.javacv)
+    implementation group: 'org.bytedeco', name: 'opencv-platform', version: "${versions.opencv}-${versions.javacv}"
+
+    implementation group: 'org.bytedeco', name: 'artoolkitplus-platform', version: "${versions.artoolkitplus}-${versions.javacv}"
+    implementation group: 'org.bytedeco', name: 'openpose-platform', version: "${versions.openpose}-${versions.javacv}"
+}
+
