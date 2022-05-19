@@ -27,16 +27,9 @@ android {
     }
 
     packagingOptions {
-        exclude 'META-INF/native-image/ios-x86_64/jnijavacpp/reflect-config.json'
-        exclude 'META-INF/native-image/linux-x86_64/jnijavacpp/jni-config.json'
-        exclude 'META-INF/native-image/windows-x86/jnijavacpp/reflect-config.json'
-        exclude 'META-INF/native-image/android-x86_64/jnijavacpp/jni-config.json'
-        exclude 'META-INF/native-image/android-x86/jnijavacpp/jni-config.json'
-        exclude 'META-INF/native-image/ios-arm64/jnijavacpp/jni-config.json'
-        exclude 'META-INF/native-image/windows-x86_64/jnijavacpp/reflect-config.json'
-        exclude 'META-INF/native-image/windows-x86_64/jnijavacpp/jni-config.json'
-        exclude 'META-INF/native-image/android-arm/jnijavacpp/reflect-config.json'
-        exclude 'META-INF/native-image/linux-ppc64le/jnijavacpp/jni-config.json'
+        resources {
+            excludes += '/META-INF/**'
+        }
     }
 }
 
@@ -45,7 +38,8 @@ ext {
             'javacv': '1.5.5',
             'opencv': '4.5.1',
             'artoolkitplus': '2.3.1',
-            'openpose': '1.7.0'
+            'openpose': '1.7.0',
+            'ffmpeg' : '4.3.2'
     ]
 }
 
@@ -58,10 +52,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-    implementation(group: 'org.bytedeco', name: 'javacpp', version: versions.javacv)
+    implementation(group: 'org.bytedeco', name: 'javacpp-platform', version: versions.javacv)
+    implementation group: 'org.bytedeco', name: 'javacv', version: versions.javacv
     implementation group: 'org.bytedeco', name: 'opencv-platform', version: "${versions.opencv}-${versions.javacv}"
-
-    implementation group: 'org.bytedeco', name: 'artoolkitplus-platform', version: "${versions.artoolkitplus}-${versions.javacv}"
-    implementation group: 'org.bytedeco', name: 'openpose-platform', version: "${versions.openpose}-${versions.javacv}"
+    implementation group: 'org.bytedeco', name: 'ffmpeg', version: "${versions.ffmpeg}-${versions.javacv}"
 }
 
