@@ -7,10 +7,159 @@
     android:orientation="horizontal"
     tools:context=".MainActivity">
 
-    <SurfaceView
-        android:id="@+id/view"
+    <com.example.visualtest.CameraView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </SurfaceView>
+    </com.example.visualtest.CameraView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/Layout_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView_accel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Accel:"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView_accel_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0"
+                android:textColor="#FFFFFF" />
+            <TextView
+                android:id="@+id/textView_accel_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView_accel_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView_gyro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gyro:"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView_gyro_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView_gyro_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView_gyro_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView_gyro_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView_gyro_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView_gyro_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Layout_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Layout_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Layout_4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Layout_5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Layout_6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Layout_7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Layout_8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="2">
+
+            <ImageButton
+                android:id="@+id/CapturePhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="80"
+                android:background="#00000000"
+                android:scaleType="centerInside"/>
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
